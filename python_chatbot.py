@@ -11,15 +11,14 @@ from tensorflow.keras.optimizers import Adam
 import random
 from keras.models import load_model
 
+#importer la base de connaissances pour le pré-traitement des données
+data_file = open(r'C:\Users\hicha\datascience\Rabat_Chatbot\rabat.json').read()
+data = json.loads(data_file)
 
 words=[]
 tags = []
 words_tags = []
-ignore_words = ['?', '!']
-
-#importer la base de connaissances pour le pré-traitement des données
-data_file = open(r'C:\Users\hicha\datascience\Rabat_Chatbot\rabat.json').read()
-data = json.loads(data_file)
+ignore_words = ['?', '!','.','|','-','*','+','/','#','@','%','`']
 
 # tokenization
 for intent in data['intents']:
@@ -71,11 +70,11 @@ for wrd in words_tags:
 random.shuffle(training)
 training = np.array(training)
 
+# ***************************************************************************************************************
 # creer deux liste d'entrainement et de teste
 train_input = list(training[:,0]) #contient les bags
 train_output = list(training[:,1]) #contient les tags
 
-print("Training data created")
 # creation d'un modele de reseau de neurones pour predir les reponses
 model = Sequential()
 model.add(Dense(256, input_shape=(len(train_input[0]),), activation='relu'))
@@ -91,7 +90,6 @@ model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['ac
 history = model.fit(np.array(train_input), np.array(train_output), epochs=20, batch_size=64, verbose=1)
 # on a enregistre le modele en format h5 (Hierarchical Data Format (HDF))
 model.save('chatbot.h5', history) 
-print("\nModèle crée avec succés!")
 
 # *************************************************************************************************************
 
@@ -120,26 +118,26 @@ def bow(sentence, words):
     return(np.array(bag))
 
 def predict_tag(sentence, model): 
-    p = bow(sentence, words) #
+    p = bow(sentence, words) #tableau de 0 et 1 lorsque un mots figure dans le vocab
     res = model.predict(np.array([p]))[0]
-    print(res)
+    # print(res)
     error = 0.25
     # filtrer les predictions
     # le resultat est probable de plus de 25%
     results = [[i,r] for i,r in enumerate(res) if r>error]
-    print("results", results)
+    # print("results", results)
 
     # ordonner par probabilité dcroissante
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
-        print("r " , r)
-        return_list.append({"intent": tags[r[0]], "probability": str(r[1])})
+        # print("r " , r)
+        return_list.append({"tag": tags[r[0]], "probability": str(r[1])})
     return return_list
 
 # pour recevoir la reponse du modèle
-def getResponse(ints, intents_json):
-    tag = ints[0]['intent']
+def getResponse(tag_prob, intents_json):
+    tag = tag_prob[0]['tag']
     list_of_intents = intents_json['intents']
     for intent in list_of_intents:
         if(intent['tag']== tag):
@@ -150,8 +148,8 @@ def getResponse(ints, intents_json):
 # pour predire le tag et recevoir la reponse
 
 def chatbot_response(text):
-    ints = predict_tag(text, model)
-    res = getResponse(ints, data)
+    tag_prob = predict_tag(text, model)
+    res = getResponse(tag_prob, data)
     return res
             
 # ***********************************************************************************************************
@@ -177,20 +175,12 @@ textcon.pack(fill="both",expand=True)
 # pour ecrire un message
 mes_win=Entry(root,width=30,xscrollcommand=True,textvariable=message)
 mes_win.place(x=6,y=310,height=60,width=380)
-# mes_win.focus()
+mes_win.focus() # place le curseur dans le champ de text automatiquement
 
 textcon.tag_config('usr',foreground='black')
 textcon.insert(END,"Bot: This is Ibn Battuta! Your Personal Assistant.\nIf you want to know where to stay in Rabat or where to visit just ask me :)\nTO EXIT TYPE exit :(\n")
 
 exit_list = ['exit','break','quit','see you later','chat with you later','end the chat','bye','ok bye']
-
-def greet_res(text):
-    text=text.lower()
-    bot_greet=['hi there','hello there','hey there']
-    usr_greet=['hi','hey','hello','bonjour','greetings','salut','wassup','whats up']
-    for word in text.split():
-        if word in usr_greet:
-            return random.choice(bot_greet)
 
 def send_msz(event=None):
     usr_input = message.get().lower()
@@ -199,16 +189,10 @@ def send_msz(event=None):
         return root.destroy()
     else:
         textcon.config(fg='green')
-            # message
-        if greet_res(usr_input) != None:
-            lab=f"Bot: {greet_res(usr_input)}"+'\n'
-            textcon.insert(END,lab)
-            mes_win.delete(0,END)
-        else:
-            # message
-            lab = f"Bot: {chatbot_response(usr_input)}"+'\n'
-            textcon.insert(END,lab)
-            mes_win.delete(0,END)
+        # message
+        lab = f"Bot: {chatbot_response(usr_input)}"+'\n'
+        textcon.insert(END,lab)
+        mes_win.delete(0,END)
 
 button_send=Button(root,text='Send',bg='dark green',activebackground='grey',command=send_msz,width=12,height=5,font=('Arial'))
 button_send.place(x=376,y=310,height=60,width=110)

@@ -14,8 +14,8 @@
                      "blended",
                      "hey ya",
                      "talking to you for first time"],
-        "responses": ["Hello, Ibn Battuta here! how can i help you ?"]
-           },    
+        "responses": ["Hello","Hi there Esi student"]
+           },
     {"tag": "name",
      "patterns": ["what is your name",
                   "who are you",
@@ -67,6 +67,8 @@
     },{"tag": "restaurant",
         "patterns": [
             "i am hungry",
+            "a place to eat",
+            "delicious meals",
             "i want to eat",
             "I want to find a restaurant",
             "where can I eat",
@@ -110,6 +112,7 @@
             "what transport is there",
             "what transport should I take",
             "how can I get to",
+            "I need to go somewhere",
             "what transport is more comfortable",
             "I am late",
             "best transport in the city"
