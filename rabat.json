@@ -66,6 +66,7 @@
                     "Hotel STORY Rabat. [Rabat]"]
     },{"tag": "restaurant",
         "patterns": [
+            "i am hungry",
             "i want to eat",
             "I want to find a restaurant",
             "where can I eat",
@@ -88,6 +89,8 @@
         "patterns": [
             "what monuments are there",
             "historical sites",
+            "another monument",
+            "i want a monument",
             "I want to see monuments",
             "recommend me a monument",
             "monuments recommendations"
@@ -148,10 +151,12 @@
     },
     {"tag": "museum",
         "patterns": ["visit museum", 
-                     "any museums", 
-                     "I want to go to a museum"],
+                    "any museums", 
+                    "I want to go to a museum",
+                    "best museum",
+                    "other museum"],
         "responses": ["Museum list here",
-                        "Take in Moroccan History at Rabat Archaeology Museum",
+                        "Take a tour in Moroccan History at Rabat Archaeology Museum",
                         "Visit the Mohammed VI Museum of Contemporary Arts",
                         "Maroc Telecom Museum",
                         "Musée National de la Poste",
@@ -168,7 +173,9 @@
             "landscapes",
             "Beautiful places",
             "famous places",
-            "touristic sites"
+            "touristic sites",
+            "some place to visit",
+            "checkout popular places"
         ],
         "responses": [  
             "Stroll the Oudaias Kasbah",
