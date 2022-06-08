@@ -1,0 +1,209 @@
+{"intents": [
+    {"tag": "greetings",
+        "patterns": ["hi", 
+                     "how  the are you", 
+                     "is anyone there", 
+                     "hello", 
+                     "whats up",
+                     "hey",
+                     "yo",
+                     "listen", 
+                     "please help me",
+                     "i belong to",
+                     "i am from",
+                     "blended",
+                     "hey ya",
+                     "talking to you for first time"],
+        "responses": ["Hello, Ibn Battuta here! how can i help you ?"]
+           },    
+    {"tag": "name",
+     "patterns": ["what is your name",
+                  "who are you",
+                  "name please",
+                  "when are your hours of opertions", 
+                  "what are your working hours", 
+                  "hours of operation",
+                  "working hours",
+                  "hours"],
+     "responses": ["I am your travel guide : Ibn Battuta"]
+        },
+    {"tag": "description",
+        "patterns": [
+            "about rabat",
+            "rabt history",
+            "hi Rabat", 
+            "Rabat",
+            "Rabat Sale Kenitra",
+            "how is rabat",
+            "is rabat beautiful",
+            "is rabat friendly",
+            "is rabat popular"
+        ],
+     "responses": ["Welcome to Rabat. As one of Morocco's Imperial Cities, Rabat is one of the best places to visit while traveling up or down the Atlantic Coast.", 
+        "Welcome to Rabat. In the early 17th century, Rabat became a center of anti-European piracy, with its stronghold at the Kasbah des Oudaias.Rabat was first made a modern capital in 1912 by Morocco's French overlords and remained the nation's capital after independence in 1956. The city is the residence of Morocco's royal family",
+        "Welcome to Rabat. Smaller in size and less famous than the Imperial Cities of Marrakesh and Fes, Rabat's calmer atmosphere can also be a welcome break from the tourist hustle of other cities."]
+    },
+    {"tag": "hotel",
+        "patterns": [
+            "i want to sleep",
+            "I want to find a hotel",
+            "where can I stay",
+            "What are the available hotels",
+        	"Where can I spend the night",
+        	"hotels near",
+        	"How much does hotels cost",
+        	"cheap Hotel",
+        	"five star hotel",
+        	"Hotel close to beach",
+        	"luxury hotel",
+            "I need a room to stay in",
+            "two person room",
+            "motel"
+        ],
+        "responses": ["Hotel The View Hotel. [Hay Riad, Rabat]", 
+                    "Hotel VILLA ARALIA Rabat. [Agdal-Ryad, Rabat]", 
+                    "Hotel La Tour Hassan Palace. [Hassan, Rabat]",
+                    "Hotel STORY Rabat. [Rabat]"]
+    },{"tag": "restaurant",
+        "patterns": [
+            "i want to eat",
+            "I want to find a restaurant",
+            "where can I eat",
+            "What are the available restarant",
+        	"Where can I eat at the night",
+        	"restaurants near",
+        	"cheap restaurant",
+        	"best restaurant",
+        	"restaurant close to beach",
+        	"luxury restaurant"
+        ],
+        "responses": ["Restaurant Le Dhow. [Quai de Bouregreg – Avenue Al Marsa, Rabat]", 
+                    "Restaurant Art Patio. [Avenue Ahmed Rifai Centre Comercial Prestige, Rabat]", 
+                    "Restaurant Dar Naji. [Dinarjat Restaurant, Boulevard el Alou, Rabat]",
+                    "Restaurant Samaky. [Angle av. Med. Zerktouni et av. sidi Med. Benabdellah, Et av. Kebibat, Rabat]",
+                    "Restaurant Ty Potes, [Rue Ghafsa, Rabat]"
+                ]
+    },
+    {"tag": "monument",
+        "patterns": [
+            "what monuments are there",
+            "historical sites",
+            "I want to see monuments",
+            "recommend me a monument",
+            "monuments recommendations"
+        ],
+        "responses": ["Mausoleum of Mohammad V",
+                    "Kasbah des Oudaias", 
+                    "Medina of Rabat", 
+                    "Hassan Tower",
+                    "Royal Palace of Rabat", 
+                    "Rabat Old Town",
+                    "Cathedrale Saint-Pierre",
+                    "Assounna Mosque"
+                ]
+    },
+    {"tag":"transport",
+        "patterns":[
+            "what transport is there",
+            "what transport should I take",
+            "how can I get to",
+            "what transport is more comfortable",
+            "I am late",
+            "best transport in the city"
+        ],
+        "responses":[
+            "take the tramway", "take the train", "take the bus", "take a small taxi",
+            "use karem application", "use inDriver application"
+        ]
+
+    },
+    {"tag": "cafe",
+        "patterns": [
+            "I want a drink",
+            "I am thirsty",
+            "I want coffee",
+            "where can I find a cafe",
+            "best coffee shop",
+            "I want a latte",
+            "I want a starbucks",
+            "AFFOGATO",
+            "AMERICANO",
+            "DOUBLE ESPRESSO",
+            "cappuccino"
+        ],
+        "responses":[
+            "Les 3 Dou'soeurs, Prestigia : [Riyad Al Andalous, Immeuble 37, Magasin 5, Al Hambra 4, Riad Al Andalous, Rabat]",
+            "Café Maure : [Rabat, Morocco]",
+            "Le Dhow : [Quai de Bouregreg, Av. Al Marsa, Rabat]",
+            "Café La Comédie : [269 Av. Mohammed V, Rabat]",
+            "Venezia Ice : [Mahaj Ryad, Rabat]",
+            "Columbus Cafe & Co : [Immeuble B-C2 10100, Av. Annakhil, Rabat]",
+            "Cafe Mabillon : [2592+RXH, Rabat]",
+            "O'Globe Lounge : [91 Rue Oued Sebou, Rabat]",
+            "Paul : [Rue Ibn Hanbal, Rabat]",
+            "Carrion Cafe : [Av. Al Barqouq, Rabat]",
+            "Café Terminus : [2587+9VG, Rabat]",
+            "Starbucks Agdal : [Avenue Fal Ould Oumeir Ecke Rue Jabal Oukaïmeden, Rabat]"
+        ]   
+    },
+    {"tag": "museum",
+        "patterns": ["visit museum", 
+                     "any museums", 
+                     "I want to go to a museum"],
+        "responses": ["Museum list here",
+                        "Take in Moroccan History at Rabat Archaeology Museum",
+                        "Visit the Mohammed VI Museum of Contemporary Arts",
+                        "Maroc Telecom Museum",
+                        "Musée National de la Poste",
+                        "Architecture Museum",
+                        "Oudaia Museum"
+                    ]
+    },
+    {"tag": "famous_places",
+        "patterns": [
+            "i want to go somewhere",
+            "i want to visit someplace",
+            "where can I go", 
+            "sight seeing", 
+            "landscapes",
+            "Beautiful places",
+            "famous places",
+            "touristic sites"
+        ],
+        "responses": [  
+            "Stroll the Oudaias Kasbah",
+                "Admire the Hassan Tower",
+                "Visit the Mausoleum of Mohamed V",
+                "Explore the Chellah Necropolis",
+                "Wander through Rabat's Medina",
+                "Stroll Rabat's Ville Nouvelle",
+                "Trip across the River to Salé Medina",
+                "Visit the Abou Hassan Medersa in Salé",
+                "Take a Nature Break within the Jardins Exotiques",
+                "Day Trip to the Sites around Kenitra",
+                "Visit Moulay Bousselham",
+                "Surf or Sunbathe on Rabat's Nearby Beaches"
+            ]
+    },
+    {"tag": "Exit",
+        "patterns": ["thank you", 
+                        "thanks", 
+                        "cya",
+                        "see you",
+                        "later", 
+                        "see you later", 
+                        "goodbye", 
+                        "i am leaving", 
+                        "have a Good day",
+                        "you helped me",
+                        "thanks a lot",
+                        "thanks a ton",
+                        "you are the best",
+                        "great help",
+                        "too good"
+                        ],
+            "responses": ["I hope you have a beautiful and safe trip. Goodbye"]
+    }
+    
+    ]
+}
