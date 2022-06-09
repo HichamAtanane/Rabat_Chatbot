@@ -175,7 +175,7 @@ textcon.pack(fill="both",expand=True)
 # pour ecrire un message
 mes_win=Entry(root,width=30,xscrollcommand=True,textvariable=message)
 mes_win.place(x=6,y=310,height=60,width=380)
-mes_win.focus() # place le curseur dans le champ de text automatiquement
+mes_win.focus() # place le curseur sur la zone de text automatiquement
 
 textcon.tag_config('usr',foreground='black')
 textcon.insert(END,"Bot: This is Ibn Battuta! Your Personal Assistant.\nIf you want to know where to stay in Rabat or where to visit just ask me :)\nTO EXIT TYPE exit :(\n")
